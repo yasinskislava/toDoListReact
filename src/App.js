@@ -138,7 +138,7 @@ class App extends Component {
       </div>
       <TodoList>
         {this.state.todos.map(item => {
-          if (item.text.toLocaleLowerCase().includes(this.state.filter.toLocaleLowerCase())) {
+          if (item.text.toString().toLocaleLowerCase().includes(this.state.filter.toLocaleLowerCase())) {
             return <li key={item.id}><input type="checkbox" checked={item.completed} onChange={(e) => {
               const tempArr = this.state.todos;
               tempArr[this.state.todos.findIndex((todo) => todo.id === item.id)].completed = e.currentTarget.checked;
